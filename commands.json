@@ -1,0 +1,74 @@
+{
+  "commands": [
+    {
+      "command": "git init",
+      "description": "Initialise un nouveau dépôt Git dans le répertoire courant",
+      "example": "git init"
+    },
+    {
+      "command": "git clone [url]",
+      "description": "Télécharge un projet et tout son historique de versions",
+      "example": "git clone https://github.com/utilisateur/depot.git"
+    },
+    {
+      "command": "git status",
+      "description": "Inspecte le contenu du répertoire de travail et de l'index",
+      "example": "git status"
+    },
+    {
+      "command": "git add [fichier]",
+      "description": "Ajoute un fichier à l'index (staging area)",
+      "example": "git add index.html"
+    },
+    {
+      "command": "git commit -m \"[message]\"",
+      "description": "Enregistre les fichiers indexés dans l'historique des versions",
+      "example": "git commit -m \"Ajout de la page d'accueil\""
+    },
+    {
+      "command": "git branch",
+      "description": "Liste toutes les branches locales",
+      "example": "git branch"
+    },
+    {
+      "command": "git checkout [branche]",
+      "description": "Bascule vers la branche spécifiée",
+      "example": "git checkout develop"
+    },
+    {
+      "command": "git merge [branche]",
+      "description": "Fusionne la branche spécifiée dans la branche courante",
+      "example": "git merge feature/login"
+    },
+    {
+      "command": "git pull",
+      "description": "Récupère et fusionne les modifications du dépôt distant",
+      "example": "git pull origin main"
+    },
+    {
+      "command": "git push",
+      "description": "Envoie les commits locaux vers le dépôt distant",
+      "example": "git push origin main"
+    },
+    {
+      "command": "git log",
+      "description": "Affiche l'historique des commits",
+      "example": "git log --oneline"
+    },
+    {
+      "command": "git diff",
+      "description": "Affiche les différences entre l'index et le répertoire de travail",
+      "example": "git diff"
+    },
+    {
+      "command": "git remote -v",
+      "description": "Affiche les URLs des dépôts distants configurés",
+      "example": "git remote -v"
+    },
+    {
+      "command": "git reset [fichier]",
+      "description": "Retire un fichier de l'index",
+      "example": "git reset style.css"
+    }
+  ]
+}

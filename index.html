@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub Masterclass | Tutoriel Complet</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation principale -->
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <div class="logo">
+            <i class="fab fa-git-alt"></i>
+            <i class="fab fa-github"></i>
+            <span class="logo-text">GitMaster</span>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#introduction" class="nav-link active"
+            ><i class="fas fa-play-circle"></i> Démarrage</a
+          >
+          <a href="#concepts" class="nav-link"
+            ><i class="fas fa-lightbulb"></i> Concepts</a
+          >
+          <a href="#installation" class="nav-link"
+            ><i class="fas fa-download"></i> Installation</a
+          >
+          <a href="#commandes" class="nav-link"
+            ><i class="fas fa-terminal"></i> Commandes</a
+          >
+          <a href="#github-workflow" class="nav-link"
+            ><i class="fas fa-code-branch"></i> Workflow</a
+          >
+          <a href="#best-practices" class="nav-link"
+            ><i class="fas fa-check-circle"></i> Pratiques</a
+          >
+          <a href="#terminal" class="nav-link"
+            ><i class="fas fa-laptop-code"></i> Terminal</a
+          >
+        </div>
+
+        <button class="nav-toggle" id="navToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Maîtrisez <span class="gradient-text">Git & GitHub</span>
+          </h1>
+          <p class="hero-subtitle">
+            Le guide ultime pour les développeurs débutants. Apprenez pas à pas
+            avec des exemples concrets et un terminal interactif.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#introduction" class="btn btn-primary">
+              <i class="fas fa-rocket"></i> Commencer le tutoriel
+            </a>
+            <a href="#terminal" class="btn btn-outline">
+              <i class="fas fa-terminal"></i> Essayer le terminal
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="window-title">terminal</span>
+            </div>
+            <div class="window-content">
+              <div class="code-line">
+                <span class="prompt">$</span> git init
+              </div>
+              <div class="code-line">
+                <span class="output">Initialized empty Git repository</span>
+              </div>
+              <div class="code-line">
+                <span class="prompt">$</span> git add .
+              </div>
+              <div class="code-line">
+                <span class="output">All files staged for commit</span>
+              </div>
+              <div class="code-line">
+                <span class="prompt">$</span> git commit -m "First commit"
+              </div>
+              <div class="code-line">
+                <span class="output"
+                  >[main (root-commit) a1b2c3d] First commit</span
+                >
+              </div>
+              <div class="code-line">
+                <span class="prompt">$</span> <span class="cursor">█</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress Navigation -->
+    <div class="progress-nav">
+      <div class="progress-container">
+        <div class="progress-steps">
+          <a href="#introduction" class="progress-step active">
+            <span class="step-number">1</span>
+            <span class="step-label">Introduction</span>
+          </a>
+          <a href="#concepts" class="progress-step">
+            <span class="step-number">2</span>
+            <span class="step-label">Concepts</span>
+          </a>
+          <a href="#installation" class="progress-step">
+            <span class="step-number">3</span>
+            <span class="step-label">Installation</span>
+          </a>
+          <a href="#commandes" class="progress-step">
+            <span class="step-number">4</span>
+            <span class="step-label">Commandes</span>
+          </a>
+          <a href="#github-workflow" class="progress-step">
+            <span class="step-number">5</span>
+            <span class="step-label">Workflow</span>
+          </a>
+          <a href="#best-practices" class="progress-step">
+            <span class="step-number">6</span>
+            <span class="step-label">Pratiques</span>
+          </a>
+          <a href="#terminal" class="progress-step">
+            <span class="step-number">7</span>
+            <span class="step-label">Terminal</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+      <!-- Introduction -->
+      <section id="introduction" class="section">
+        <div class="section-header">
+          <span class="section-badge">Chapitre 1</span>
+          <h2 class="section-title">Pourquoi Git & GitHub ?</h2>
+          <p class="section-description">
+            Comprendre l'importance de ces outils dans le développement moderne
+          </p>
+        </div>
+
+        <div class="section-content">
+          <div class="cards-grid">
+            <div class="command-card intro-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">time_travel.sh</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-history"></i>
+                </div>
+                <h3 class="card-title">Voyage dans le temps</h3>
+                <p class="card-text">
+                  Erreur fatale ? Pas de panique. Revenez instantanément à une
+                  version précédente de votre projet qui fonctionnait.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card intro-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">fusion_team.exe</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="card-title">Travail d'équipe</h3>
+                <p class="card-text">
+                  Fusionnez le travail de plusieurs développeurs sans conflits
+                  majeurs. Git gère les modifications concurrentes.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card intro-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">safety_net.js</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="card-title">Sécurité absolue</h3>
+                <p class="card-text">
+                  Chaque modification est signée et stockée. Impossible de
+                  perdre ou de corrompre des fichiers sans s'en rendre compte.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concepts -->
+      <section id="concepts" class="section">
+        <div class="section-header">
+          <span class="section-badge">Chapitre 2</span>
+          <h2 class="section-title">Concepts Fondamentaux</h2>
+          <p class="section-description">
+            Comprendre le vocabulaire et les principes de Git
+          </p>
+        </div>
+
+        <div class="section-content">
+          <div class="cards-grid">
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">version_control.exe</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-history"></i>
+                </div>
+                <h3 class="card-title">Contrôle de Version</h3>
+                <p class="card-text">
+                  Suivez chaque modification de votre code, revenez en arrière
+                  si nécessaire, et comprenez l'évolution de votre projet.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">collaboration.sh</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="card-title">Collaboration</h3>
+                <p class="card-text">
+                  Travaillez en équipe efficacement sans écraser le travail des
+                  autres. Fusionnez les modifications intelligemment.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">cloud_backup.js</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="card-title">Sauvegarde Cloud</h3>
+                <p class="card-text">
+                  Votre code est sécurisé en ligne. Travaillez depuis n'importe
+                  quel ordinateur sans perdre votre travail.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">career_boost.py</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="card-title">Compétence Essentielle</h3>
+                <p class="card-text">
+                  Git est requis pour 95% des emplois en développement.
+                  Maîtrisez-le pour booster votre carrière.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="comparison-container">
+            <div class="command-card comparison-card bad-practice">
+              <div class="cmd-card-header">
+                <span class="cmd-title">old_way.txt</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <h3 class="comparison-title">Sans Git</h3>
+                <ul class="comparison-list">
+                  <li class="comparison-item bad">
+                    <i class="fas fa-times"></i> Fichiers nommés
+                    "final_v2_reel.zip"
+                  </li>
+                  <li class="comparison-item bad">
+                    <i class="fas fa-times"></i> Code perdu sans retour
+                  </li>
+                  <li class="comparison-item bad">
+                    <i class="fas fa-times"></i> Collaboration chaotique
+                  </li>
+                  <li class="comparison-item bad">
+                    <i class="fas fa-times"></i> Pas d'historique
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="command-card comparison-card good-practice">
+              <div class="cmd-card-header">
+                <span class="cmd-title">git_workflow.md</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <h3 class="comparison-title">Avec Git</h3>
+                <ul class="comparison-list">
+                  <li class="comparison-item good">
+                    <i class="fas fa-check"></i> Historique détaillé
+                  </li>
+                  <li class="comparison-item good">
+                    <i class="fas fa-check"></i> Retour versions précédentes
+                  </li>
+                  <li class="comparison-item good">
+                    <i class="fas fa-check"></i> Collaboration structurée
+                  </li>
+                  <li class="comparison-item good">
+                    <i class="fas fa-check"></i> Branches parallèles
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="concept-diagram terminal-style">
+            <div class="cmd-card-header">
+              <span class="cmd-title">git_architecture.svg</span>
+              <div class="cmd-controls">
+                <span class="cmd-dot red"></span>
+                <span class="cmd-dot yellow"></span>
+                <span class="cmd-dot green"></span>
+              </div>
+            </div>
+            <div class="diagram-container">
+              <div class="diagram-item">
+                <div class="diagram-icon">
+                  <i class="fas fa-folder-open"></i>
+                </div>
+                <h4 class="diagram-title">Dépôt</h4>
+                <p class="diagram-desc">Votre projet local</p>
+              </div>
+
+              <div class="diagram-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+
+              <div class="diagram-item">
+                <div class="diagram-icon">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <h4 class="diagram-title">Index / Commit</h4>
+                <p class="diagram-desc">Instantanés</p>
+              </div>
+
+              <div class="diagram-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+
+              <div class="diagram-item">
+                <div class="diagram-icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h4 class="diagram-title">GitHub</h4>
+                <p class="diagram-desc">Cloud Distant</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="definition-cards">
+            <div class="command-card definition-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">man git</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <h3 class="definition-title">Git vs GitHub</h3>
+                <div class="terminal-text-block">
+                  <p>> <strong>Git</strong>: Outil local de versionning.</p>
+                  <p>> <strong>GitHub</strong>: Hébergement cloud & social.</p>
+                  <div class="definition-metaphor">
+                    <span class="comment"># Metaphore:</span>
+                    <span>Git = Word | GitHub = Google Docs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation -->
+      <section id="installation" class="section">
+        <div class="section-header">
+          <span class="section-badge">Chapitre 3</span>
+          <h2 class="section-title">Installation & Configuration</h2>
+          <p class="section-description">
+            Installez Git sur votre système et configurez-le correctement
+          </p>
+        </div>
+
+        <div class="section-content">
+          <div class="terminal-window large">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="window-title">installation_guide</span>
+            </div>
+            
+            <div class="os-selector-tabs">
+              <button class="os-tab active" data-os="windows">
+                <i class="fab fa-windows"></i> windows.md
+              </button>
+              <button class="os-tab" data-os="mac">
+                <i class="fab fa-apple"></i> macos.md
+              </button>
+              <button class="os-tab" data-os="linux">
+                <i class="fab fa-linux"></i> linux.md
+              </button>
+            </div>
+
+            <div class="os-content-body">
+              <!-- Windows -->
+              <div class="os-instructions active" id="windows-instructions">
+                <div class="instruction-block">
+                  <div class="comment"># 1. Télécharger l'installateur</div>
+                  <p class="instruction-text">
+                    Rendez-vous sur <a href="https://git-scm.com/download/win" target="_blank" class="terminal-link">git-scm.com/download/win</a>.
+                  </p>
+                </div>
+                
+                <div class="instruction-block">
+                  <div class="comment"># 2. Exécuter l'installation</div>
+                  <p class="instruction-text">Lancez le .exe et suivez les instructions (Next > Next > Next).</p>
+                </div>
+
+                <div class="instruction-block">
+                  <div class="comment"># 3. Vérifier l'installation</div>
+                  <div class="code-snippet small">
+                    <pre><code>git --version</code></pre>
+                    <button class="copy-button mini" data-code="git --version">
+                      <i class="far fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- macOS -->
+              <div class="os-instructions" id="mac-instructions">
+                <div class="instruction-block">
+                    <div class="comment"># 1. Via Homebrew (Recommandé)</div>
+                    <div class="code-snippet small">
+                      <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+                      <button class="copy-button mini" data-code='/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'>
+                        <i class="far fa-copy"></i>
+                      </button>
+                    </div>
+                </div>
+                
+                <div class="instruction-block">
+                    <div class="comment"># 2. Installer Git</div>
+                    <div class="code-snippet small">
+                      <pre><code>brew install git</code></pre>
+                      <button class="copy-button mini" data-code="brew install git">
+                        <i class="far fa-copy"></i>
+                      </button>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Linux -->
+              <div class="os-instructions" id="linux-instructions">
+                <div class="instruction-block">
+                    <div class="comment"># Ubuntu / Debian</div>
+                    <div class="code-snippet small">
+                      <pre><code>sudo apt update && sudo apt install git</code></pre>
+                      <button class="copy-button mini" data-code="sudo apt update && sudo apt install git">
+                        <i class="far fa-copy"></i>
+                      </button>
+                    </div>
+                </div>
+                
+                <div class="instruction-block">
+                    <div class="comment"># Fedora / RHEL</div>
+                    <div class="code-snippet small">
+                      <pre><code>sudo dnf install git</code></pre>
+                      <button class="copy-button mini" data-code="sudo dnf install git">
+                        <i class="far fa-copy"></i>
+                      </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="config-container terminal-style-box">
+             <div class="cmd-card-header">
+                <span class="cmd-title">.gitconfig</span>
+             </div>
+             <div class="config-content">
+                 <div class="config-line">
+                    <span class="prompt">$</span> git config --global user.name "Votre Nom"
+                 </div>
+                 <div class="config-line">
+                    <span class="prompt">$</span> git config --global user.email "votre@email.com"
+                 </div>
+                 <div class="config-line">
+                    <span class="prompt">$</span> git config --global core.editor "code --wait"
+                 </div>
+                 <div class="config-tip">
+                    <i class="fas fa-exclamation-circle"></i> N'oubliez pas de configurer votre identité !
+                 </div>
+             </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Commandes -->
+      <section id="commandes" class="section">
+        <div class="section-header">
+          <span class="section-badge">Chapitre 4</span>
+          <h2 class="section-title">Commandes Essentielles</h2>
+          <p class="section-description">
+            Les commandes Git que vous utiliserez quotidiennement
+          </p>
+        </div>
+
+        <div class="section-content">
+          <div class="command-categories">
+            <div class="category-tabs">
+              <button class="category-tab active" data-category="basics">
+                Fondamentales
+              </button>
+              <button class="category-tab" data-category="branching">
+                Branches
+              </button>
+              <button class="category-tab" data-category="remote">
+                Dépôts distants
+              </button>
+              <button class="category-tab" data-category="advanced">
+                Avancées
+              </button>
+            </div>
+
+            <div class="category-content">
+              <!-- Commandes fondamentales -->
+              <div class="command-category active" id="basics-category">
+                <div class="command-grid">
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git init</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Initialise un nouveau dépôt Git dans le dossier courant.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git init</code></pre>
+                        <button class="copy-button mini" data-code="git init">
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-play-circle"></i> Démarrage
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git add</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Ajoute des fichiers à l'index (staging area).
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git add .</code></pre>
+                        <button class="copy-button mini" data-code="git add .">
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-plus-circle"></i> Staging
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git commit</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Crée un commit avec les fichiers de l'index.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git commit -m "Message"</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code='git commit -m "Message descriptif"'
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-save"></i> Sauvegarde
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git status</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Affiche l'état des fichiers (modifiés, indexés, etc.).
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git status</code></pre>
+                        <button class="copy-button mini" data-code="git status">
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-info-circle"></i> Information
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Commandes de branches -->
+              <div class="command-category" id="branching-category">
+                <div class="command-grid">
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git branch</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Gère les branches : création, liste, suppression.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git branch nouvelle</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git branch nouvelle"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-code-branch"></i> Gestion
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git checkout</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Change de branche ou restaure des fichiers.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git checkout main</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git checkout main"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-exchange-alt"></i> Navigation
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git merge</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Fusionne une branche dans la branche courante.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git merge feature</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git merge feature"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-merge"></i> Fusion
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Commandes Distants (Remote) -->
+              <div class="command-category" id="remote-category">
+                <div class="command-grid">
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git clone</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Télécharge un projet et son historique.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git clone [url]</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git clone https://github.com/user/repo.git"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-download"></i> Téléchargement
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git pull</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Récupère les modifications du dépôt distant.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git pull origin main</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git pull origin main"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-arrow-down"></i> Réception
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git push</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Envoie les commits locaux vers le distant.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git push origin main</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git push origin main"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-arrow-up"></i> Envoi
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git remote -v</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Affiche les URLs des dépôts distants.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git remote -v</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git remote -v"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-network-wired"></i> Configuration
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Commandes Avancées -->
+              <div class="command-category" id="advanced-category">
+                <div class="command-grid">
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git log</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Affiche l'historique des commits.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git log --oneline</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git log --oneline"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-history"></i> Historique
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git diff</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Affiche les différences entre index et travail.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git diff</code></pre>
+                        <button class="copy-button mini" data-code="git diff">
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-file-code"></i> Inspection
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="command-card">
+                    <div class="cmd-card-header">
+                      <span class="cmd-title">git reset</span>
+                      <div class="cmd-controls">
+                        <span class="cmd-dot red"></span>
+                        <span class="cmd-dot yellow"></span>
+                        <span class="cmd-dot green"></span>
+                      </div>
+                    </div>
+                    <div class="cmd-card-body">
+                      <p class="command-description">
+                        Retire un fichier de l'index.
+                      </p>
+                      <div class="code-snippet small">
+                        <pre><code>git reset file</code></pre>
+                        <button
+                          class="copy-button mini"
+                          data-code="git reset file"
+                        >
+                          <i class="far fa-copy"></i>
+                        </button>
+                      </div>
+                      <div class="command-tag">
+                        <i class="fas fa-undo"></i> Annulation
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow GitHub -->
+      <section id="github-workflow" class="section">
+        <div class="section-header">
+          <span class="section-badge">Chapitre 5</span>
+          <h2 class="section-title">Workflow GitHub</h2>
+          <p class="section-description">
+            Comment collaborer efficacement sur des projets open source ou en équipe
+          </p>
+        </div>
+
+        <div class="section-content">
+          <div class="cards-grid">
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">1_fork.sh</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-code-branch"></i>
+                </div>
+                <h3 class="card-title">Fork</h3>
+                <p class="card-text">
+                  Créez votre propre copie d'un dépôt existant pour y travailler
+                  librement sans affecter le projet original.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">2_feature_branch.sh</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-magic"></i>
+                </div>
+                <h3 class="card-title">Feature Branch</h3>
+                <p class="card-text">
+                  Ne travaillez jamais sur <code>main</code> ! Créez une branche
+                  dédiée pour chaque nouvelle fonctionnalité ou correction.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">3_pull_request.sh</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-code-pull-request"></i>
+                </div>
+                <h3 class="card-title">Pull Request (PR)</h3>
+                <p class="card-text">
+                  Proposez vos modifications aux mainteneurs du projet. C'est le
+                  moment de la revue de code et de la discussion.
+                </p>
+              </div>
+            </div>
+
+            <div class="command-card concept-card">
+              <div class="cmd-card-header">
+                <span class="cmd-title">4_merge.sh</span>
+                <div class="cmd-controls">
+                  <span class="cmd-dot red"></span>
+                  <span class="cmd-dot yellow"></span>
+                  <span class="cmd-dot green"></span>
+                </div>
+              </div>
+              <div class="cmd-card-body">
+                <div class="card-icon">
+                  <i class="fas fa-check-double"></i>
+                </div>
+                <h3 class="card-title">Merge</h3>
+                <p class="card-text">
+                  Une fois approuvé, votre code est fusionné dans la branche
+                  principale. Félicitations, vous avez contribué !
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bonnes Pratiques -->
+      <section id="best-practices" class="section">
+        <div class="section-header">
+          <span class="section-badge">Chapitre 6</span>
+          <h2 class="section-title">Bonnes Pratiques</h2>
+          <p class="section-description">
+            Les règles d'or pour garder un historique propre et lisible
+          </p>
+        </div>
+
+        <div class="section-content">
+          <div class="terminal-window large">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="window-title">best_practices.md</span>
+            </div>
+            <div class="os-content-body">
+              <div class="instruction-block">
+                <div class="comment">## 1. Commit Messages</div>
+                <p class="instruction-text">
+                  Soyez clair et concis. Utilisez l'impératif.
+                </p>
+                <div class="code-snippet small">
+                  <pre><code class="language-diff"><span style="color: #ff5f56">- Fix bug</span>
+<span style="color: #27ca3f">+ Fix login page validation error on submit</span></code></pre>
+                </div>
+              </div>
+
+              <div class="instruction-block">
+                <div class="comment">## 2. .gitignore est votre ami</div>
+                <p class="instruction-text">
+                  Ne committez jamais les dossiers node_modules, les fichiers de
+                  configuration locaux (.env) ou les fichiers compilés.
+                </p>
+              </div>
+
+              <div class="instruction-block">
+                <div class="comment">## 3. Atomic Commits</div>
+                <p class="instruction-text">
+                  Un commit doit faire une seule chose, et la faire bien. Ne
+                  mélangez pas "Correction CSS" et "Refonte de la base de
+                  données".
+                </p>
+              </div>
+
+              <div class="instruction-block">
+                <div class="comment">## 4. Pull Before Push</div>
+                <p class="instruction-text">
+                  Toujours récupérer les dernières modifications distantes avant
+                  d'envoyer les vôtres pour éviter les conflits.
+                </p>
+                <div class="code-snippet small">
+                  <pre><code>git pull origin main --rebase</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Terminal Interactif -->
+      <section id="terminal" class="section terminal-section">
+        <div class="section-header">
+          <span class="section-badge">Laboratoire</span>
+          <h2 class="section-title">Terminal Interactif</h2>
+          <p class="section-description">
+            Testez les commandes Git en direct sans risque
+          </p>
+        </div>
+
+        <div class="section-content">
+          <div class="terminal-container">
+            <div class="terminal-header">
+              <div class="terminal-title">
+                <i class="fas fa-terminal"></i>
+                <span>Git Simulator</span>
+              </div>
+              <div class="terminal-actions">
+                <button class="terminal-action" id="clearTerminal">
+                  <i class="fas fa-trash-alt"></i> Effacer
+                </button>
+                <button class="terminal-action" id="resetTerminal">
+                  <i class="fas fa-redo"></i> Réinitialiser
+                </button>
+              </div>
+            </div>
+
+            <div class="terminal-body">
+              <div id="terminal-output" class="terminal-output">
+                <div class="terminal-line">
+                  <span class="terminal-prompt">$</span>
+                  <span class="terminal-text"
+                    >Bienvenue dans le simulateur Git !</span
+                  >
+                </div>
+                <div class="terminal-line">
+                  <span class="terminal-prompt">$</span>
+                  <span class="terminal-text"
+                    >Tapez 'help' pour voir les commandes disponibles.</span
+                  >
+                </div>
+                <div class="terminal-line">
+                  <span class="terminal-prompt">$</span>
+                  <span class="terminal-text"
+                    >Ce terminal simule un environnement Git réel.</span
+                  >
+                </div>
+              </div>
+
+              <div class="terminal-input-container">
+                <span class="terminal-prompt">$</span>
+                <input
+                  type="text"
+                  id="terminal-input"
+                  class="terminal-input"
+                  placeholder="Tapez une commande Git (ex: git init)"
+                />
+                <button id="execute-command" class="terminal-execute">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="terminal-quick-commands">
+              <h4>Commandes rapides :</h4>
+              <div class="quick-commands-grid">
+                <button class="quick-command" data-command="git init">
+                  git init
+                </button>
+                <button class="quick-command" data-command="git status">
+                  git status
+                </button>
+                <button class="quick-command" data-command="git add .">
+                  git add .
+                </button>
+                <button
+                  class="quick-command"
+                  data-command='git commit -m "Premier commit"'
+                >
+                  git commit
+                </button>
+                <button class="quick-command" data-command="git log --oneline">
+                  git log
+                </button>
+                <button class="quick-command" data-command="clear">
+                  clear
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal-explanation">
+            <div class="explanation-card">
+              <h3>
+                <i class="fas fa-info-circle"></i> Comment utiliser ce terminal
+              </h3>
+              <p>
+                Ce simulateur vous permet d'expérimenter avec Git dans un
+                environnement sécurisé. Vous pouvez :
+              </p>
+              <ul>
+                <li>Tester toutes les commandes Git principales</li>
+                <li>Créer des fichiers et commits simulés</li>
+                <li>Voir les résultats immédiatement</li>
+                <li>Apprendre par la pratique sans risque</li>
+              </ul>
+              <p class="note">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Note :</strong> Les modifications ne touchent pas votre
+                système de fichiers réel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="logo">
+              <i class="fab fa-git-alt"></i>
+              <i class="fab fa-github"></i>
+              <span class="logo-text">GitMaster</span>
+            </div>
+            <p class="footer-description">
+              Le tutoriel complet pour maîtriser Git et GitHub. Conçu pour les
+              développeurs débutants.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 class="footer-title">Tutoriel</h4>
+              <a href="#introduction" class="footer-link">Introduction</a>
+              <a href="#concepts" class="footer-link">Concepts</a>
+              <a href="#installation" class="footer-link">Installation</a>
+              <a href="#commandes" class="footer-link">Commandes</a>
+            </div>
+
+            <div class="footer-column">
+              <h4 class="footer-title">Ressources</h4>
+              <a
+                href="https://git-scm.com/doc"
+                target="_blank"
+                class="footer-link"
+                >Documentation Git</a
+              >
+              <a href="https://github.com" target="_blank" class="footer-link"
+                >GitHub</a
+              >
+              <a
+                href="https://learngitbranching.js.org"
+                target="_blank"
+                class="footer-link"
+                >Git Branching Game</a
+              >
+            </div>
+
+            <div class="footer-column">
+              <h4 class="footer-title">Projet</h4>
+              <a href="#" class="footer-link">Objectifs pédagogiques</a>
+              <a href="#" class="footer-link">Critères d'évaluation</a>
+              <a href="#" class="footer-link">À propos</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            © 2026 GitMaster Tutorial. Projet éducatif réalisé dans le cadre
+            d'un tutoriel sur Git et GitHub.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="backToTop" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="terminal.js"></script>
+  </body>
+</html>
