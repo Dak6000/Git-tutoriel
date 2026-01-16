@@ -1473,6 +1473,120 @@ a:hover {
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* Ajustements pour .progress-nav : réduire la taille des lettres
+   et ajouter un léger espacement entre mots sur petits écrans */
+@media (max-width: 1024px) {
+    .progress-steps {
+        gap: 0.5rem;
+    }
+
+    .progress-step {
+        padding: 0.4rem 0.6rem;
+        min-width: 90px;
+        font-size: 0.92rem;
+        white-space: normal;
+        word-wrap: break-word;
+        word-spacing: 0.12rem;
+    }
+
+    .progress-step .step-label {
+        font-size: 0.72rem;
+        white-space: normal;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-steps {
+        gap: 0.4rem;
+    }
+
+    .progress-step {
+        padding: 0.35rem 0.5rem;
+        min-width: 72px;
+        font-size: 0.82rem;
+        word-spacing: 0.16rem;
+    }
+
+    .progress-step .step-label {
+        font-size: 0.68rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-steps {
+        gap: 0.35rem;
+    }
+
+    .progress-step {
+        padding: 0.3rem 0.45rem;
+        min-width: 60px;
+        font-size: 0.75rem;
+        word-spacing: 0.18rem;
+    }
+
+    .progress-step .step-label {
+        font-size: 0.64rem;
+    }
+}
+
+/* Réduire les bordures/marges du terminal sur écrans réduits
+   pour que le terminal et les notes occupent plus de largeur */
+@media (max-width: 900px) {
+    .main-content {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .terminal-section {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-sm);
+        border: none;
+        border-radius: var(--radius-sm);
+        background: transparent;
+    }
+
+    .terminal-container {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: var(--spacing-md);
+        border: none;
+        border-radius: var(--radius-sm);
+        box-shadow: none;
+    }
+
+    .terminal-body {
+        padding: 1rem;
+        min-height: 200px;
+        max-height: none;
+    }
+
+    .terminal-quick-commands,
+    .terminal-explanation {
+        padding: 1rem;
+        border: none;
+        border-radius: var(--radius-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .terminal-section {
+        padding: 0.75rem;
+        margin-top: 0.5rem;
+        border-radius: 6px;
+    }
+
+    .terminal-container {
+        margin-bottom: 0.5rem;
+    }
+}
+
 @media (max-width: 1024px) {
     h1 { font-size: 3rem; }
     h2 { font-size: 2.25rem; }
